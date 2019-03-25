@@ -1,10 +1,10 @@
 <h1><%= "Welcome to #{@user.user_name}'s page. "%></h1>
-<h3><%= @user.bio %></h3>
-<h3><%= @user.user_name %></h3>
-<h3><%= @user.location %></h3>
+<h3>Bio: <%= @user.bio %></h3>
+<h3>Location: <%= @user.location %></h3>
+<h3> Their blogs </h3>
 
 <ul>
     <% @user.posts.each do |post| %>
-        <li><%= "#{post.title} - #{post.content}" %></li>
+        <li><%=link_to "#{post.title} - #{post.content}", post_path(post) %></li>
     <% end %>
 </ul>

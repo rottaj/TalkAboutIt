@@ -1,0 +1,10 @@
+<h1> Create your new profile! </h1>
+
+<%= form_for @user do |f| %>
+    Enter your screen name: <%= f.text_field :user_name %><br><br>
+    Your bio: <%= f.text_area :bio %><br><br>
+    Status: <%= f.text_field :status %><br><br>
+    Location: <%= f.text_field :location %><br><br>
+    Email: <%= f.text_field :email %><br><br>
+    <%= f.submit %><br><br>
+<% end %>   
