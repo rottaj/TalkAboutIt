@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Post.destroy_all
+PostCategories.destroy_all
 
 swag = User.create(bio: "swagger", user_name: "swaggerMcjagger" , status: "swaggy" , location: "Costa Rica" , email: "swag@gmail.swag", password_digest: "swagasdfasrfawefasdfa")
-Post.create(title: "swag", content: "swag", user_id: swag.id)
+p1 = Post.create(title: "swag", content: "swag", user_id: swag.id)
+sport1 = Category.create(name: "sports")
+PostCategory.create(category_id: sport1.id, post_id: p1.id)
