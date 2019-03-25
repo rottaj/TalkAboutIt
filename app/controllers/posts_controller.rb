@@ -12,11 +12,10 @@ class PostsController < ApplicationController
         @post = Post.new
         @categories = Category.all
 
-        if @post.save?
-            redirect_to @post
-        else
-            render :new
-        end
+        #if @post.save?
+        #else
+            #render :new
+        #end
     end
 
     def create
