@@ -1,6 +1,6 @@
 <%= form_for :post do |p| %>
 	Post Title: <%= p.text_field :title %></br>
 	Content: <%= p.text_area :content %></br>
-	<%= collection_check_boxes(:post, :category_ids, Category.all, :id, :name) %></br>
+	<%= p.collection_check_boxes(:post, :category_ids, Category.all, :id, :name) %></br>
 	<%= p.submit "Create Post" %>
 <% end %>
