@@ -1,0 +1,5 @@
+<%@posts.each do |post| %>
+	<h1><%=post.title %></h1>
+	<h2>Content: <%=post.content %></h2>
+	<h2>Created By: <%=link_to post.user.user_name, post_url(post)%></h2>
+<% end %>

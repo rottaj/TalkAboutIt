@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Post.destroy_all
 
-
-User.create(bio: "swagger", user_name: "swaggerMcjagger" , status: "swaggy" , location: "Costa Rica" , email: "swag@gmail.swag", password_digest: "swagasdfasrfawefasdfa")
+swag = User.create(bio: "swagger", user_name: "swaggerMcjagger" , status: "swaggy" , location: "Costa Rica" , email: "swag@gmail.swag", password_digest: "swagasdfasrfawefasdfa")
+Post.create(title: "swag", content: "swag", user_id: swag.id)
