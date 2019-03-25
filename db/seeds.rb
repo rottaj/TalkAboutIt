@@ -10,7 +10,17 @@ Post.destroy_all
 Category.destroy_all
 PostCategory.destroy_all
 
-swag = User.create(bio: "swagger", user_name: "swaggerMcjagger" , status: "swaggy" , location: "Costa Rica" , email: "swag@gmail.swag", password_digest: "swagasdfasrfawefasdfa")
-p1 = Post.create(title: "swag", content: "swag", user_id: swag.id)
-sport1 = Category.create(name: "sports")
-PostCategory.create(category_id: sport1.id, post_id: p1.id)
+jack = User.create(bio: "My name is Jack and I attend Flatiron!", user_name: "Rottaj" , status: "j chillin" , location: "Costa Rica" , email: "jack@gmail.jack", password_digest: "swagasdfasrfawefasdfa")
+jackpost1 = Post.create(title: "The Greatest", content: "I am the greatest hooper of all time.", user_id: jack.id)
+cat1 = Category.create(name: "sports")
+PostCategory.create(category_id: cat1.id, post_id: jackpost1.id)
+
+jackpost2 = Post.create(title: "Jimmy Johns", content: "Jimmy Johns makes me sick but I love it.", user_id: jack.id)
+cat2 = Category.create(name: "food")
+PostCategory.create(category_id: cat2.id, post_id: jackpost2.id)
+
+jackpost3 = Post.create(title: "Flatiron", content: "Bobby and I are making some solid proggie.", user_id: jack.id)
+cat3 = Category.create(name: "tech")
+PostCategory.create(category_id: cat3.id, post_id: jackpost3.id)
+
+
