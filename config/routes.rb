@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :badges
   resources :categories
   resources :posts
   resources :users
