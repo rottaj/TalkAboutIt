@@ -1,0 +1,8 @@
+<h1> All of our users. </h1>
+<h2> Click one to see their profile! </h2>
+
+<ul>
+    <% @users.each do |user| %>
+       <li><%= link_to "#{user.user_name} - #{user.status}", user_path(user) %></li>
+    <% end %>
+</ul>
