@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	
- 	resources :badges
+ 	resources :badges, only: [:index, :show]
  	resources :categories
  	resources :posts
  	resources :users

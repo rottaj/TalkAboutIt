@@ -27,7 +27,14 @@ class BadgesController < ApplicationController
 	end
 
 	def update
+		@badge = Badge.find(params[:id])
+		@badge.update(badge_params)
 
+        if @badge.save
+            redirect_to badge_path(@badge)
+        else
+            render :edit 
+        end
 	end
 
 	def badge_params

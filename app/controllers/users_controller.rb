@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     end
 
     def login
+        
         session[:user_id]
 
     end
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
             @user.save
             redirect_to user_path(@user)
         else
+            # byebug
             redirect_to new_user_path
         end
     end
@@ -46,6 +48,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:bio, :user_name, :email, :status, :location, :password)
+        params.require(:user).permit(:bio, :user_name, :email, :status, :location, :password, :password_confirmation)
     end
 end
