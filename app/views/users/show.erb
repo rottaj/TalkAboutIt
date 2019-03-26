@@ -1,3 +1,4 @@
+<div style="text-align: center;"/>
 <h1><%= "Welcome to #{@user.user_name}'s page. "%></h1>
 <h3>Bio: <%= @user.bio %></h3>
 <h3>Location: <%= @user.location %></h3>
@@ -8,3 +9,4 @@
         <li><%=link_to "#{post.title} - #{post.content}", post_path(post) %></li>
     <% end %>
 </ul>
+</div>

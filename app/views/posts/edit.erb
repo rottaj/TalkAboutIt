@@ -1,6 +1,8 @@
+<div style="text-align: center;"/>
 <%= form_for @post do |p| %>
 	Edit Post Title: <%= p.text_field :title %></br>
 	Edit Content: <%= p.text_area :content %></br>
 	Edit categories! <%= p.collection_check_boxes(:category_ids, @categories, :id, :name)%></br>
 	<%= p.submit "Edit Post" %>
 <% end %>
+</div>
