@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     
+    has_secure_password
+
     has_many :posts
     has_many :userbadges
     has_many :badges, through: :userbadges

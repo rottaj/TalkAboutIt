@@ -10,3 +10,6 @@ class Post < ApplicationRecord
         sorted_posts = Post.all.sort_by { |post| post.created_at }.reverse
     end
 end
+
+
+
