@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
-    
+
+
+
     def index
         @users = User.all 
+    end
+
+    def login
+        session[:user_id]
+
     end
 
     def show 
