@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     
     def index
-        @posts = Post.all 
+        @posts = Post.sort_posts_by_time 
     end
 
     def show 
