@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
             redirect_to user_path(user)
         else 
-            render new_user_path
+            render "new"
         end
     end
 
