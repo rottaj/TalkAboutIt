@@ -1,9 +1,0 @@
-<div style="text-align: center;"/>
-<h1> Login to your Account! </h1>
-
-<%= form_for :login, method: "POST" do |u| %>
-	Username: <%= u.text_field :user_name %><br>
-	Password: <%= u.text_field :password_digest %><br>
-	<%= u.submit "Login" %><br>
-<% end %>
-</div>
