@@ -24,7 +24,7 @@ class User < ApplicationRecord
   end
 
   def is_verified
-    $user.verification_code == $input ? ($user.save && $user.verifcation_code = "True") : (puts "Check your email!")
+    $user.verification_code == $input ? ($user.save && $user.verification_code = "True") : (puts "Check your email!")
   end
 
   def assign_verification_code

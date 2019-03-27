@@ -17,6 +17,8 @@ class PostsController < ApplicationController
     end
 
     def create
+        post_params[user_id: authenticate]
+        byebug
         @post = Post.new(post_params)
         byebug
         if @post.valid?
@@ -47,7 +49,5 @@ class PostsController < ApplicationController
 
     def post_params
         params.require(:post).permit(:content, :title, :user_id, :category_ids => [])
-        p=params...
-        p[:category_ids].reject!(&:blank?)
     end
 end

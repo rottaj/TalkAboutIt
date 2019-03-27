@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
 
-   before_action :checked
-
-
-   def checked
-    if session[:current_user_id] == nil
-        redirect_to "/signin"
-    end
-   end
+   #def checked
+    #if session[:current_user_id] == nil
+        #redirect_to "/signin"
+    #end
+   #end
    
     def verify
         #@user = User.find(params[:id])
@@ -28,7 +25,8 @@ class UsersController < ApplicationController
     end
 
     def show 
-        @user = User.find(params[:id])
+        @user = User.find(session[:current_user_id])
+
     end
 
     def new
@@ -47,11 +45,11 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find(params[:id])
+        @user = User.find(session[:current_user_id])
     end
 
     def update
-        @user = User.find(params[:id])
+        @user = User.find(session[:current_user_id])
         @user.update(user_params)
 
         if @user.save
