@@ -1,3 +1,19 @@
+
+<style type="text/css">
+	div {
+		position: relative;
+  		width: 89%;
+  		height: 89%;
+  		border: 25px solid orange;
+  		padding: 25px;
+  		margin: 25px;
+	}
+
+</style>
+
+
+
+<div style="text-align: center"/>
 <h1> Log in to your account! </h1>
 <%= form_tag sessions_path do %>
     <%= label_tag "Username: " %>
@@ -6,3 +22,4 @@
     <%= password_field_tag :password %>
     <%= submit_tag "Login" %>
 <% end %>
+</div>

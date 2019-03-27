@@ -4,10 +4,8 @@ class UsersController < ApplicationController
         @users = User.all 
     end
 
-    def login
-        
-        session[:user_id]
-
+    def verify
+        @input = params[:input]
     end
 
     def show 
@@ -20,10 +18,10 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-
+        @user.sendMail
         if @user.valid?
             @user.save
-            redirect_to user_path(@user)
+            render :verify
         else
             # byebug
             redirect_to new_user_path
@@ -48,6 +46,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:bio, :user_name, :email, :status, :location, :password, :password_confirmation)
+        params.require(:user).permit(:bio, :user_name, :email, :status, :location, :password, :password_confirmation, :input)
     end
 end

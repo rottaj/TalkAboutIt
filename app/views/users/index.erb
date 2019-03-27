@@ -1,9 +1,26 @@
+
+<style type="text/css">
+	div {
+		position: relative;
+  		width: 89%;
+  		height: 89%;
+  		border: 25px solid orange;
+  		padding: 25px;
+  		margin: 25px;
+	}
+
+</style>
+
+
+
 <div style="text-align: center;"/>
 <h1> All of our users. </h1>
 <h2> Click one to see their profile! </h2>
 <ul>
     <% @users.each do |user| %>
+      <div style= "border: 10px solid yellow;">
        <li><%= link_to "#{user.user_name} - #{user.status}", user_path(user) %></li>
+     </div>
     <% end %>
 </ul>
 </div>
