@@ -4,7 +4,7 @@
 		position: relative;
   		width: 89%;
   		height: 89%;
-  		border: 25px solid orange;
+  		border: 25px solid grey;
   		padding: 25px;
   		margin: 25px;
 	}
@@ -18,3 +18,19 @@
 <h3>Created by: <%= @post.user.user_name %></h3>
 <p><%= @post.content %></p>
 </div>
+
+<h4> Create a comment! </h4>
+<div style="text-align: center;"/>
+<%= form_for(@reply, url: replies_new_path) do |f| %>
+	<%= f.hidden_field :post_id, :value => @post.id %>
+	<%= f.text_field :content %><br>
+	<%= f.submit  %>
+<% end %>
+</div>
+
+<h4> Comments </h4>
+<ul>
+<% @post.replies.each do |reply| %>
+	<li><%= reply.content %></li>
+<% end %>
+</ul>

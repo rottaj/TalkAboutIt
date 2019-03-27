@@ -5,8 +5,7 @@ class User < ApplicationRecord
     after_create :assign_verification_code
 
     has_many :posts
-    has_many :userbadges
-    has_many :badges, through: :userbadges
+    
 
     validates :user_name, presence: true, uniqueness: true
     validates :email, presence: true, uniqueness: true
@@ -28,5 +27,6 @@ class User < ApplicationRecord
   def assign_verification_code
     self.verification_code = SecureRandom.hex(6)
   end
+
 
 end

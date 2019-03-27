@@ -10,6 +10,7 @@ Post.destroy_all
 Category.destroy_all
 PostCategory.destroy_all
 
+
 jack = User.create(bio: "My name is Jack and I attend Flatiron!", user_name: "Rottaj" , status: "j chillin" , location: "Costa Rica" , email: "jack@gmail.jack", password: "password")
 jackpost1 = Post.create(title: "The Greatest", content: "I am the greatest hooper of all time.", user_id: jack.id)
 cat1 = Category.create(name: "sports")
@@ -23,4 +24,5 @@ jackpost3 = Post.create(title: "Flatiron", content: "Bobby and I are making some
 cat3 = Category.create(name: "tech")
 PostCategory.create(category_id: cat3.id, post_id: jackpost3.id)
 
+reply1 = Reply.create(content: "Wow you probably shouldnt eat Jimmy Johns again.", post_id: jackpost2.id)
 
