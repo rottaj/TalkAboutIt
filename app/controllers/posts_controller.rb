@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-
+        byebug
         if @post.valid?
             @post.save
             redirect_to post_path(@post)
@@ -45,6 +45,8 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:content, :title, :category_ids)
+        params.require(:post).permit(:content, :title, :user_id, :category_ids => [])
+        p=params...
+        p[:category_ids].reject!(&:blank?)
     end
 end

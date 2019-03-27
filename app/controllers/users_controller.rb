@@ -1,15 +1,24 @@
 class UsersController < ApplicationController
 
-    def index
-        @users = User.all 
-    end
+   before_action :checked
 
+
+   def checked
+    if session[:current_user_id] == nil
+        redirect_to "/signin"
+    end
+   end
+   
     def verify
         #@user = User.find(params[:id])
         input = params[:input]
         $user.verification_code == input ? ($user.verication_code = "True") : (puts "Check your email!")
         redirect_to '/posts'
         flash[:notice] = "Email Verified!"
+    end
+
+    def index
+        @users = User.all
     end
 
     def show 
