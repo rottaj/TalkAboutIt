@@ -1,5 +1,4 @@
 
-
 <style type="text/css">
 	div {
 		position: relative;
@@ -14,10 +13,11 @@
 
 
 
+
 <div style="text-align: center;"/>
-<h1>Edit Category: </h1>
-<%= form_for :category do |c| %>
-	Category Name: <%=c.text_field :name %></br>
-	<%= c.submit "Edit Category" %>
-<% end %>
+<h1>Check your email for the verification code!</h1>
+	<%= form_tag ('/verify') do %>
+		<%= text_field_tag @input %><br>
+		<%= submit_tag "Verify" %>
+	<% end %>
 </div>

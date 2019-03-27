@@ -1,11 +1,26 @@
 
+<style type="text/css">
+	div {
+		position: relative;
+  		width: 89%;
+  		height: 89%;
+  		border: 25px solid orange;
+  		padding: 25px;
+  		margin: 25px;
+	}
+
+</style>
+
+
 <div style="text-align: center;"/>
 <h1>Recent Posts: </h1>
 
 <h1> TalkAboutIt! </h1>
 <%@posts.each do |post| %>
+	<div style= "border: 10px solid yellow;">
 	<h3><%=link_to post.title, post_path(post) %></h3>
-	<h4>Content: <%=post.content %></h4>
+	<h4><%=post.content %></h4>
 	<h4>Created By: <%=link_to post.user.user_name, user_path(post.user) %></h4>
+	</div>
 <% end %>
 </div>
