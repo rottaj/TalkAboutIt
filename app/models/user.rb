@@ -2,6 +2,8 @@ class User < ApplicationRecord
     
     has_secure_password
 
+    after_create :assign_verification_code
+
     has_many :posts
     has_many :userbadges
     has_many :badges, through: :userbadges
@@ -9,19 +11,22 @@ class User < ApplicationRecord
     validates :user_name, presence: true, uniqueness: true
     validates :email, presence: true, uniqueness: true
     validates :bio, length: { maximum: 200 }
-	$x = SecureRandom.hex(5)
+
+
 	def sendMail
-   		
    		mail = Mail.new do
      		from 'uberswaggerauthenication@gmail.swag'
-     		to self[:email]
-     		subject $x
+     		to $user.email
+     		subject $user.verification_code
      		body 'swagger'
    		end
-  
+    
    		mail.delivery_method :sendmail
    		mail.deliver
-   		self.verification_code == $x ? (self.verication_code = "True") : (puts "Check your email!")
-	end
+  end
+
+  def assign_verification_code
+    self.verification_code = SecureRandom.hex(6)
+  end
 
 end

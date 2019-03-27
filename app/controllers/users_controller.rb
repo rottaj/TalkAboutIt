@@ -5,7 +5,11 @@ class UsersController < ApplicationController
     end
 
     def verify
-        @input = params[:input]
+        #@user = User.find(params[:id])
+        input = params[:input]
+        $user.verification_code == input ? ($user.verication_code = "True") : (puts "Check your email!")
+        redirect_to '/posts'
+        flash[:notice] = "Email Verified!"
     end
 
     def show 
@@ -17,15 +21,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        @user.sendMail
-        if @user.valid?
-            @user.save
+        $user = User.new(user_params)
+        $user.assign_verification_code
+        #if $user.valid?
+            #$user.save
+            $user.sendMail
             render :verify
-        else
+        #else
             # byebug
-            redirect_to new_user_path
-        end
+            #redirect_to new_user_path
+        #end
     end
 
     def edit

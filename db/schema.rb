@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_03_26_220553) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "verification_code"
+    t.text "verification_code"
   end
 
 end
