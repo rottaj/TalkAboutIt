@@ -5,10 +5,9 @@ class RepliesController < ApplicationController
     end
 
     def create
-        #byebug
-
         @reply = Reply.create(reply_params)
-        post_id = params[:post_id]
+        post_id = reply_params[:post_id]
+        #byebug
         redirect_to "/posts/#{post_id}"
     end
         
