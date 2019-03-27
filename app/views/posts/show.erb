@@ -1,5 +1,10 @@
 
 <style type="text/css">
+	
+	#home {
+		text-align: center;
+	}
+	
 	div {
 		position: relative;
   		width: 89%;
@@ -13,7 +18,7 @@
 
 
 
-<div style="text-align: center;"/>
+<div id="home"/>
 <h1><%= @post.title%></h1>
 <h3>Created by: <%= @post.user.user_name %></h3>
 <p><%= @post.content %></p>
