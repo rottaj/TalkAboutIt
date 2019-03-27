@@ -1,5 +1,10 @@
 
 <style type="text/css">
+
+	body {
+		background-image: url(http://eskipaper.com/images/free-background-4.jpg);
+	}
+
 	div {
 		position: relative;
   		width: 89%;
@@ -17,7 +22,7 @@
 <div style="text-align: center;"/>
 <h1>Check your email for the verification code!</h1>
 	<%= form_tag ('/verify') do %>
-		<%= text_field_tag @input %><br>
+		<%= text_field_tag :input %><br>
 		<%= submit_tag "Verify" %>
 	<% end %>
 </div>

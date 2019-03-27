@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     
     def index
         @posts = Post.sort_posts_by_time 
+        @categories = Category.all
     end
 
     def show 
