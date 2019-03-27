@@ -1,5 +1,11 @@
 
 <style type="text/css">
+
+	body {
+		background-image: url(http://eskipaper.com/images/free-background-4.jpg);
+	}
+
+
 	
 	#home {
 		text-align: center;
@@ -24,18 +30,21 @@
 <p><%= @post.content %></p>
 </div>
 
-<h4> Create a comment! </h4>
 <div style="text-align: center;"/>
+<h4> Create a comment! </h4>
 <%= form_for(@reply, url: replies_new_path) do |f| %>
 	<%= f.hidden_field :post_id, :value => @post.id %>
 	<%= f.text_field :content %><br>
 	<%= f.submit  %>
 <% end %>
-</div>
 
+<div style="text-align: center;"/>
 <h4> Comments </h4>
 <ul>
 <% @post.replies.each do |reply| %>
 	<li><%= reply.content %></li>
 <% end %>
 </ul>
+</div>
+</div>
+
