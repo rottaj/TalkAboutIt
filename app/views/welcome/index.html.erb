@@ -1,7 +1,9 @@
 
 <style type="text/css">
 	body {
-		background-image: url(http://eskipaper.com/images/free-background-4.jpg);
+		background-image: url(https://cdn.pixabay.com/photo/2018/04/05/14/09/sunflower-3292932__340.jpg);
+		background-repeat: no-repeat;
+		background-size: 100%, 100%;
 	}
 
 
@@ -9,17 +11,22 @@
 		position: relative;
   		width: 89%;
   		height: 89%;
-  		border: 25px solid orange;
   		padding: 25px;
   		margin: 25px;
+
 	}
+
+	#home_title {
+		color: #CCEEEE;
+	}
+
 
 </style>
 
 
 
 <div style="text-align: center;"/>
-<h1>Welcome To Talk About It</h1>
+<h1 id="home_title">Welcome To Talk About It</h1>
 	<%= button_to "Create Account", new_user_path, method: :get %>
 	<%= button_to "Login", signin_path, method: :get %>
 </div>
