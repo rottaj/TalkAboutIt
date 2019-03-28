@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
     def new
-
+        reset_session
     end
     
     def create
@@ -14,12 +14,6 @@ class SessionsController < ApplicationController
         else 
             render "new"
         end
-    end
-
-    def destroy
-        reset_session
-        # byebug
-        redirect_to '/signin?'
     end
 end
 
