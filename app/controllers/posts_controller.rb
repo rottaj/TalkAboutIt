@@ -19,10 +19,9 @@ class PostsController < ApplicationController
     end
 
     def create
-        post_params[user_id: authenticate]
-        byebug
+
         @post = Post.new(post_params)
-        byebug
+        @post.user_id = session[:current_user_id]
         if @post.valid?
             @post.save
             redirect_to post_path(@post)
@@ -38,7 +37,9 @@ class PostsController < ApplicationController
 
     def update
         @post = Post.find(params[:id])
-        @post.update(post_params)
+        @post.update_attributes(post_params)
+        @post.user_id = session[:current_user_id]
+
 
         if @post.save
             redirect_to post_path(@post)

@@ -11,6 +11,8 @@
   <p><%= button_to 'Logout', '/signin?', method: :delete %></p>
   <p><%= button_to 'My Page', "/users/#{session[:current_user_id]}", method: :get %></p>
   <p><%= button_to 'Welcome', "/", method: :get %></p>
+  <p><%= button_to 'TalkAboutIt Board', "/posts", method: :get %></p>
+  <p><%= button_to 'New Post', "/posts/new", method: :get %></p>
 
   <body>
     <%= yield %>

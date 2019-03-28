@@ -2,22 +2,24 @@
 <style type="text/css">
 
 	body {
-		background-image: url(http://eskipaper.com/images/free-background-4.jpg);
+		background-image: url(https://images.pexels.com/photos/164005/pexels-photo-164005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		opacity: ; 
 	}
 
 
 	
 	#home {
 		text-align: center;
+		opacity: 1;
 	}
 	
 	div {
 		position: relative;
   		width: 89%;
   		height: 89%;
-  		border: 25px solid grey;
-  		padding: 25px;
-  		margin: 25px;
+  		border: 8px solid grey;
+  		padding: 10px;
+  		margin: 20px;
 	}
 
 </style>
@@ -39,7 +41,7 @@
 <% end %>
 
 <div style="text-align: center;"/>
-<h4> Comments </h4>
+<h4> Comments: </h4>
 <ul>
 <% @post.replies.each do |reply| %>
 	<li><%= reply.content %></li>
