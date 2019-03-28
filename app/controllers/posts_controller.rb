@@ -46,7 +46,6 @@ class PostsController < ApplicationController
 
     def post_params
         params.require(:post).permit(:content, :title, :user_id, :category_ids => [])
-        p=params...
-        p[:category_ids].reject!(&:blank?)
+        
     end
 end
