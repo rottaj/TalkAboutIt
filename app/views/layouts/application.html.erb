@@ -8,7 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <%= link_to 'Logout', '/signin?', method: :delete %>
+  <p><%= button_to 'Logout', '/signin?', method: :delete %></p>
+  <p><%= button_to 'My Page', "/users/#{session[:current_user_id]}", method: :get %></p>
+  <p><%= button_to 'Welcome', "/", method: :get %></p>
+
   <body>
     <%= yield %>
   </body>

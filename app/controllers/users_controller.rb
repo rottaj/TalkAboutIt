@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
+    
+    before_action :authenticate
+    skip_before_action :authenticate, only: [:new, :create, :verify]
 
-   #def checked
-    #if session[:current_user_id] == nil
-        #redirect_to "/signin"
-    #end
-   #end
    
     def verify
         #@user = User.find(params[:id])
@@ -13,7 +11,7 @@ class UsersController < ApplicationController
             $user.verification_code = "True"
             $user.save
             flash[:notice] = "Email Verified!"
-            redirect_to "/users/#{$user.id}"
+            redirect_to "/signin"
         else
             render :verify
             flash[:notice] = "Wrong Verification Code!"
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
     end
 
     def show 
-        @user = session[:current_user_id]
+        @user = User.find(session[:current_user_id])
     end
 
     def new
@@ -34,12 +32,15 @@ class UsersController < ApplicationController
 
     def create
         $user = User.new(user_params)
+        
         $user.assign_verification_code
         if $user.valid?
             $user.sendMail
             render :verify
         else
+            
             redirect_to new_user_path
+            
         end
     end
 

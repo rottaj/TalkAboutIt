@@ -1,5 +1,7 @@
 class RepliesController < ApplicationController
 
+    before_action :authenticate
+
     def new
         @reply = Reply.new
     end

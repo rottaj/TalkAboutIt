@@ -10,7 +10,6 @@ Post.destroy_all
 Category.destroy_all
 PostCategory.destroy_all
 
-
 jack = User.create(bio: "My name is Jack and I attend Flatiron!", user_name: "Rottaj" , status: "j chillin" , location: "Costa Rica" , email: "jack@gmail.jack", password: "password")
 jackpost1 = Post.create(title: "The Greatest", content: "I am the greatest hooper of all time.", user_id: jack.id)
 cat1 = Category.create(name: "sports")

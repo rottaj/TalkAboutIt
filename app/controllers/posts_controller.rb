@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
     
+    before_action :authenticate
+
     def index
         @posts = Post.sort_posts_by_time 
         @categories = Category.all
