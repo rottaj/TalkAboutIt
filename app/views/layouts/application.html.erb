@@ -1,60 +1,30 @@
 <!DOCTYPE html>
 
-<style>
-body {margin:0;}
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Welcome Page</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.navbar a:hover {
-  background: #ddd;
-  color: black;
-}
-
-.main {
-  padding: 16px;
-  margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
-}
-
-#buttoncontainer {
-  display:inline-flex;
-  text-align: center;
-}
-
-</style>
-</head>
-
-  <div id="navbar">
-    <div id="buttoncontainer">
-    <p><%= button_to 'Welcome', "/", method: :get %></p>
-    <% if session[:current_user_id] != nil %>
-    <p><%= button_to 'My Page', "/users/#{session[:current_user_id]}", method: :get %></p>
-    <p><%= button_to 'TalkAboutIt Board', "/posts", method: :get %></p>
-    <p><%= button_to 'New Post', "/posts/new", method: :get %></p>
-    <p><%= button_to 'Logout', '/signin?', method: :delete %></p>
-    <% end %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/users/<%= session[:current_user_id]%>">My Page <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts">Recent Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts/new">Create Post</a>
+      </li>
+      
+    </ul>
   </div>
-  </div>
-<html>
-  <head>
-
+</nav>
 
 
     <title>TalkAboutIt</title>
