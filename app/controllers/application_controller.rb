@@ -1,12 +1,15 @@
 class ApplicationController < ActionController::Base
 
-    before_action :authenticate
 
-    def authenticate
-        if session[:current_user_id] == nil
-            redirect_to "/signin"
-        end
-    end
+
+    #def authenticate
+        #if session[:current_user_id] == nil
+            #redirect_to "/signin"
+        #else
+    		#session[:current_user_id] = @user.id
+
+        #end
+    #end
 
     
 

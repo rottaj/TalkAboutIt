@@ -2,6 +2,7 @@ class PostsController < ApplicationController
     
     def index
         @posts = Post.sort_posts_by_time 
+        @categories = Category.all
     end
 
     def show 
@@ -16,6 +17,8 @@ class PostsController < ApplicationController
     end
 
     def create
+        post_params[user_id: authenticate]
+        byebug
         @post = Post.new(post_params)
         byebug
         if @post.valid?
