@@ -15,10 +15,10 @@ class CategoriesController < ApplicationController
 	end
 
 	def create
-		@category = Category.new(category_params(:name))
+		@category = Category.new(category_params)
 		if @category.valid?
 			@category.save
-			redirect_to @category
+			redirect_to categories_path
 		else
 			render :new
 		end
@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
 
 	end
 
-	def category_params(*args)
-		params.require(:category).permit(*args)
+	def category_params
+		params.require(:category).permit(:name)
 	end
 end
