@@ -8,17 +8,20 @@
 
 
 
-	#home_title {
-		
-	}
-
+	
+    #layout {
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
 </style>
 
 
 
-<div style="text-align: center;"/>
+<div style="text-align: center;", id = "layout">
 <h1 id="home_title">Welcome To TalkAboutIt</h1>
-	<%= button_to "Create Account", new_user_path, method: :get %>
+	<%= button_to "Create Account", new_user_path, method: :get %><br>
 	<%= button_to "Login", signin_path, method: :get %>
 </div>

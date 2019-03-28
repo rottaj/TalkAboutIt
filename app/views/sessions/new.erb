@@ -4,11 +4,18 @@
 		background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/SeeingSpots_1400x900.jpg);
 	}
 
+    #layout {
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
 </style>
 
 
 
-<div style="text-align: center"/>
+<div id = "layout">
 <h1> Log in to your account! </h1>
 <%= form_tag sessions_path do %>
     <%= label_tag "Username: " %>

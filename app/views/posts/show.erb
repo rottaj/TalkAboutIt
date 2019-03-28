@@ -2,7 +2,7 @@
 <style type="text/css">
 
 	body {
-		background-image: url(https://images.pexels.com/photos/164005/pexels-photo-164005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		background-image: url(https://images.pexels.com/photos/403575/pexels-photo-403575.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 		opacity: ; 
 	}
 
@@ -30,14 +30,14 @@
 <%= form_for(@reply, url: replies_new_path) do |f| %>
 	<%= f.hidden_field :post_id, :value => @post.id %>
 	<%= f.text_field :content %><br>
-	<%= f.submit  %>
+	<%= f.submit  %><br><br><br>
 <% end %>
 
 <div style="text-align: center;"/>
 <h4> Comments: </h4>
 <ul>
 <% @post.replies.each do |reply| %>
-	<li><%= reply.content %></li>
+	<%= reply.content %>
 <% end %>
 </ul>
 </div>

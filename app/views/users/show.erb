@@ -2,25 +2,25 @@
 <style type="text/css">
 
   body {
-    background-image: url(https://images.pexels.com/photos/1764702/pexels-photo-1764702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-image: url(https://images.pexels.com/photos/164642/pexels-photo-164642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   }
-
+  
 
 
 
 </style>
 
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div style="text-align: center;"/>
-<h1><%= "Welcome to #{@user.user_name}'s page. "%></h1>
-<h3>Bio: <%= @user.bio %></h3>
-<h3>Location: <%= @user.location %></h3>
-<h3> Their blogs </h3>
+<h5><%= "Welcome to #{@user.user_name}'s page. "%></h5>
+<h6>Bio: <%= @user.bio %></h6>
+<h6>Location: <%= @user.location %></h6>
+<h6> Their blogs </h6>
 
 <ul>
     <% @user.posts.each do |post| %>
-        <li><%=link_to "#{post.title} - #{post.content}", post_path(post) %></li>
+        <%=link_to "#{post.title} - #{post.content}", post_path(post) %>
     <% end %>
 </ul>
 </div>
