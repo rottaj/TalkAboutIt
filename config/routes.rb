@@ -3,8 +3,8 @@ Rails.application.routes.draw do
  	resources :categories
  	resources :posts
 	resources :users
-	# resources :replies
 	
+	post '/categories/new', to: 'categories#create', as: 'categories_new'
 	get '/verify', to: 'users#verify', as: 'verify'
 	post '/verify', to: 'users#verify', as: 'verifycode'
 	get '/', to: 'welcome#index'

@@ -3,23 +3,17 @@
 	
 
 	body {
-		background-image: url(http://eskipaper.com/images/free-background-4.jpg);
+		background-image: url(https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 	}
 
-	div {
-		position: relative;
-  		width: 89%;
-  		height: 89%;
-  		border: 25px solid orange;
-  		padding: 25px;
-  		margin: 25px;
-	}
+	
 
 </style>
 
 
 
 <div style="text-align: center;"/>
+<h1> TalkAboutIt Categories </h1>
 <% @categories.each do |category| %>
 	<h3><%=link_to category.name, post_path(category.name) %></h3>
 <%end %>
