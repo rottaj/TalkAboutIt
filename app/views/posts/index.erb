@@ -14,8 +14,8 @@
 <div style="text-align: center;"/>
 <h1> TalkAboutIt! </h1>
 <h1>Recent Posts: </h1>
-<%@posts.each do |post| %>
-	<div style= "border: 10px solid grey;">
+<%@posts.each do |post| %><br>
+	<div style= "border: 5px solid grey;">
 	<h3><%=link_to post.title, post_path(post) %></h3>
 	<h4><%=post.content %></h4>
 	<h4>Created By: <%=link_to post.user.user_name, user_path(post.user) %></h4>
