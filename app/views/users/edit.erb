@@ -4,6 +4,12 @@
   body {
     background-image: url(https://images.pexels.com/photos/1764702/pexels-photo-1764702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   }
+  #layout {
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
 
 
@@ -12,7 +18,7 @@
 
 
 
-<div style="text-align: center;"/>
+<div style="text-align: center;", id = "layout"/>
 <h1> Edit your new profile! </h1>
 
 <%= form_for @user do |f| %>

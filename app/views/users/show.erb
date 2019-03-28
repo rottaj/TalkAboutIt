@@ -5,22 +5,27 @@
     background-image: url(https://images.pexels.com/photos/164642/pexels-photo-164642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   }
   
+  #layout {
+        position: fixed;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
 
 
 </style>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div style="text-align: center;"/>
-<h5><%= "Welcome to #{@user.user_name}'s page. "%></h5>
+<div style="text-align: left;", id = "layout" />
+<h4><%= "Welcome to #{@user.user_name}'s page. "%></h4><br>
 <h6>Bio: <%= @user.bio %></h6>
 <h6>Location: <%= @user.location %></h6>
-<h6> Their blogs </h6>
+<h6> Their blogs: </h6>
 
 <ul>
     <% @user.posts.each do |post| %>
-        <%=link_to "#{post.title} - #{post.content}", post_path(post) %>
+        -<%=link_to "#{post.title} - #{post.content}", post_path(post) %><br>
     <% end %>
 </ul>
 </div>

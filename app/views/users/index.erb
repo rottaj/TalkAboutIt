@@ -2,32 +2,23 @@
 <style type="text/css">
 
   body {
-    background-image: url(https://images.pexels.com/photos/1764702/pexels-photo-1764702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-image: url(https://images.pexels.com/photos/472311/pexels-photo-472311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   }
 
 
 
-	div {
-		position: relative;
-  		width: 89%;
-  		height: 89%;
-  		/* border: 25px solid orange; */
-  		padding: 25px;
-  		margin: 25px;
-	}
+	
 
 </style>
-
-
-
 <div style="text-align: center;"/>
-<h1> All of our users. </h1>
-<h2> Click one to see their profile! </h2>
+<h2> TalkAboutIt Users </h2>
+</div>
+<div style="text-align: left;"/>
 <ul>
     <% @users.each do |user| %>
-      <div style= "border: 10px solid yellow;">
+      
        <li><%= link_to "#{user.user_name} - #{user.status}", user_path(user) %></li>
-     </div>
+     
     <% end %>
 </ul>
 </div>
