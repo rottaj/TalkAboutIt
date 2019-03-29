@@ -1,45 +1,9 @@
 
 <style type="text/css">
-	/*
-	body {
-		background-image: url(https://images.pexels.com/photos/917494/pexels-photo-917494.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-		background-repeat: no-repeat;
-		background-size: 100%, 100%;
-	}
-	*/
-
-/*
-	@import url(https://fonts.googleapis.com/css?family=Advent+Pro:100);
-	html { 
-  	background:  url(http://i.imgur.com/5OsqTua.gif) no-repeat center center fixed; 
-  	background-size: cover;
-	}
-	h1{
-  	font-family: 'Advent Pro', sans-serif;
-  	font-size: 3em;
-  	margin: .2em .5em;
-  	color: rgba(0,0,0, 0.3);
-	}
-	body {
-    	height: 100%;
-	}
-
-*/
-/*
-	#myVideo {
-  		position: fixed;
-  		right: 0;
-  		bottom: 0;
-  		min-width: 100%;
-  		min-height: 100%;
-	}
-
-*/
-
+\
 	body {
   		margin: 0;
   		padding: 0;
-/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
   		background: #333;
   		background-attachment: fixed;
   		background-size: cover;
@@ -47,9 +11,7 @@
     	width: 100px;
 	}
 
-/* The only rule that matters */
 	#video-background {
-/*  making the video fullscreen  */
   		position: fixed;
   		right: 0; 
   		bottom: 0;
@@ -71,26 +33,19 @@
         transform: translate(-50%, -50%);
 
     }
+	img{
+	
+    width: 100px;
+	}
 
 </style>
-<!---
-<video autoplay muted loop id="myVideo">
-  	<source src="/background.mp4" type="video/mp4">
-</video>
--->
 
 
 <video autoplay loop id="video-background" muted plays-inline>
   <source src="https://app.coverr.co/s3/mp4/Follow-the-Tree.mp4" type="video/mp4">
 </video>
 
-
-
-
-
-
 <div style="text-align: center;", id = "layout">
-<img src="https://files.slack.com/files-pri/T02MD9XTF-FH5PFFRA5/logo.png" />
 <%= image_tag  "Logo.png" %>
 <h1 id="home_title">Welcome To TalkAboutIt</h1>
 	<%= button_to "Create Account", new_user_path, method: :get %><br>
