@@ -2,15 +2,24 @@
 <style type="text/css">
 
 	body {
-		background-image: url(https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		background-image: url(https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 	}
+
+	#layout {
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
 
 </style>
 
 
 
 
-<div style="text-align: center;"/>
+<div style="text-align: center;", id = "layout" />
 <h1>Check your email for the verification code!</h1>
 	<%= form_tag ('/verify') do %>
 		<%= text_field_tag :input %><br>
