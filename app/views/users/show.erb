@@ -28,4 +28,8 @@
         -<%=link_to "#{post.title} - #{post.content}", post_path(post) %><br>
     <% end %>
 </ul>
+
+<a href="/users/<%= session[:current_user_id] %>/edit">
+  <button type="button" class="btn btn-info" >Edit Profile</button>
+</a>
 </div>

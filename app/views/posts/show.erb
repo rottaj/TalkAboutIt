@@ -36,10 +36,13 @@
 <div style="text-align: center;"/>
 <h4> Comments: </h4>
 <ul>
-<% @post.replies.each do |reply| %>
+<% @post.replies.each do |reply| %><br>
 	<%= reply.content %>
 <% end %>
 </ul>
 </div>
+	<a href="/posts">
+  		<button type="button" class="btn btn-primary" >Home</button>
+	</a>
 </div>
 
