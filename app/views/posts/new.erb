@@ -2,16 +2,40 @@
 <style type="text/css">
 
 	body {
-		background-image: url(https://images.pexels.com/photos/403575/pexels-photo-403575.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	}
+
+		#video-background {
+/*  making the video fullscreen  */
+  		position: fixed;
+  		right: 0; 
+  		bottom: 0;
+  		min-width: 100%; 
+  		min-height: 100%;
+  		width: auto; 
+  		height: auto;
+  		z-index: -100;
+	}
+
+	#layout {
+		font-style: italic;
+    	color: black;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
 	}
 	
 
 
 </style>
 
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="https://app.coverr.co/s3/mp4/The-Pelicans.mp4" type="video/mp4">
+</video>
 
 
-<div style="text-align: center;"/>
+<div style="text-align: center;" id="layout"/>
 <h1> New Post </h1>
 <%= form_for @post do |p| %>
 	Post Title: <%= p.text_field :title %></br><br>
@@ -20,3 +44,7 @@
 	<%= p.submit "Create Post" %>
 <% end %>
 </div>
+
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+

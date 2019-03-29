@@ -1,18 +1,42 @@
 
 <style type="text/css">
 	body {
-		background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/SeeingSpots_1400x900.jpg);
 	}
+
+        #video-background {
+        position: fixed;
+        right: 0; 
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+        width: auto; 
+        height: auto;
+        z-index: -100;
+    }
+
+
+    h1 {
+        font-style: italic;
+        color: white;
+    }
+
 
     #layout {
         position: fixed;
         top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
+        color: white;
     }
 
 </style>
 
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+  
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="https://app.coverr.co/s3/mp4/Field_day.mp4" type="video/mp4">
+</video>
 
 <div id = "layout">
 <h1> Log in to your account! </h1>
