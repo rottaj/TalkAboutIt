@@ -25,7 +25,7 @@
 
 <ul>
     <% @user.posts.each do |post| %>
-        -<%=link_to "#{post.title} - #{post.content}", post_path(post) %><br>
+        <%=link_to "#{post.title} - #{post.content}", post_path(post) %><br>
     <% end %>
 </ul>
 

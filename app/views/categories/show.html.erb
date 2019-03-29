@@ -1,1 +1,11 @@
-<h1><%@category.name %></h1>
+<div style="text-align: center;"/>
+<h1><%=@category.name.capitalize %></h1>
+<% @category.posts.each do |post| %>
+	<%= link_to "#{post.title} - #{post.content}", post_path(post)  %><br>
+<%end%>
+
+<a href="/posts">
+  <button type="button" class="btn btn-primary" >Home</button>
+</a>
+
+</div>
