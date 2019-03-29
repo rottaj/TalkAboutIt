@@ -1,14 +1,28 @@
 
 <style type="text/css">
 	
+		body {
+			font-style: italic;
+		}
 
-	body {
-		background-image: url(https://images.pexels.com/photos/1054222/pexels-photo-1054222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
+
+		#video-background {
+  		position: fixed;
+  		right: 0; 
+  		bottom: 0;
+  		min-width: 100%; 
+  		min-height: 100%;
+  		width: auto; 
+  		height: auto;
+  		z-index: -100;
 	}
-
-
 </style>
 
+
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="https://app.coverr.co/s3/mp4/Rain-On-Me.mp4" type="video/mp4">
+</video>
 
 
 <div style="text-align: center;"/>

@@ -2,35 +2,56 @@
 <style type="text/css">
 
 	body {
-		background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/PaintSquares_1400x900.jpg);
+		background-image: url(https://texturefabrik.files.wordpress.com/2013/05/29-05-13_paper03.jpg);
 	}
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 
+	.postContainer {
+    	width: 80%;
+    	height: 200px;
+    	background: aqua;
+    	margin: auto;
+    	padding: 10px;
+}
+
+	.post {
+		 width: 15%;
+    	height: 200px;
+    	background: red;
+    	float: left;
+	}
+
+
+
+
+
 </style>
 
 
-<div style="text-align: center";/>
+<div style="text-align: center"; id="headerContainer"/>
+
 <h1> TalkAboutIt! </h1>
 <h1>Recent Posts: </h1>
 </div>
 
-<%@posts.each do |post| %><br>
-	<div style= "text-align: center; border: 5px solid grey; ">
-	<h3><%=link_to post.title, post_path(post) %></h3>
-	<h4><%=post.content %></h4>
-	<% if post.categories.count > 0 %>
-	<div id = "sidebyside">
-	<% categorynames = []%>
-		<% post.categories.each do |category| %>
-			<h6><% categorynames << category.name %></h6>
-		<% end %>
-	<% x = categorynames.join(" ")%>
-	<h6><%= "Category(ies): #{x} "%></h6>
-	</div>	
+<section id="postContainer">
+	<%@posts.each do |post| %><br>
+		<div style= "text-align: center">
+			<h3><%=link_to post.title, post_path(post) %></h3>
+			<h4><%=post.content %></h4>
+			<% if post.categories.count > 0 %>
+			<div id = "sidebyside">
+				<% categorynames = []%>
+					<% post.categories.each do |category| %>
+						<h6><% categorynames << category.name %></h6>
+					<% end %>
+				<% x = categorynames.join(" ")%>
+				<h6><%= "Category(ies): #{x} "%></h6>
+			</div>	
+			<% end %>
+			<h5>Created By: <%=link_to post.user.user_name, user_path(post.user) %></h5>
+		</div>
 	<% end %>
-	<h5>Created By: <%=link_to post.user.user_name, user_path(post.user) %></h5>
-	</div>
-<% end %>
-</div>
+</section>
