@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     end
 
     def index
-        @users = User.all
+        @users = User.sort_users_by_posts
     end
 
     def show 

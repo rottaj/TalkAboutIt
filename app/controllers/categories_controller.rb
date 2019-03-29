@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 	before_action :authenticate
 
 	def index
-		@categories = Category.all
+		@categories = Category.sort_by_posts
 	end
 
 	def show

@@ -18,9 +18,9 @@
 
 	#layout {
 		font-style: italic;
-    	color: black;
+    	color: orange;
         position: fixed;
-        top: 35%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
@@ -40,7 +40,7 @@
 <%= form_for @post do |p| %>
 	Post Title: <%= p.text_field :title %></br><br>
 	Content: <%= p.text_area :content %></br><br>
-	Select your post's categories! <%= p.collection_check_boxes(:category_ids, @categories, :id, :name)%></br><br>
+	Select your post's categories!    <%= p.collection_check_boxes(:category_ids, @categories, :id, :name)%></br><br>
 	<%= p.submit "Create Post" %>
 <% end %>
 </div>

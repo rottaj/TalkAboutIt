@@ -31,5 +31,9 @@ class User < ApplicationRecord
     self.verification_code = SecureRandom.hex(6)
   end
 
+  def self.sort_users_by_posts
+    sorted_users = User.all.sort_by { |user| user.posts.count }.reverse
+  end 
+
 
 end
